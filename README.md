@@ -10,16 +10,9 @@ Understand about **Leaderboard** and **Achievement**. Setting up your game in Go
 
 ## Install
 
-Cordova >= 5.0.0
-
+NPM module has not been created for this fork yet
 ```bash
 cordova plugin add cordova-plugin-play-games-services --variable APP_ID=you_app_id_here
-```
-
-Cordova < 5.0.0
-
-```bash
-cordova plugin add https://github.com/artberri/cordova-plugin-play-games-services.git --variable APP_ID=you_app_id_here
 ```
 
 ## Usage
