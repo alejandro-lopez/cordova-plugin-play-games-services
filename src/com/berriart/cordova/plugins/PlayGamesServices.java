@@ -60,6 +60,7 @@ public class PlayGamesServices extends CordovaPlugin implements GameHelperListen
 
     private static final String ACTION_UNLOCK_ACHIEVEMENT = "unlockAchievement";
     private static final String ACTION_UNLOCK_ACHIEVEMENT_NOW = "unlockAchievementNow";
+    private static final String ACTION_REVEAL_ACHIEVEMENT = "revealAchievement";
     private static final String ACTION_INCREMENT_ACHIEVEMENT = "incrementAchievement";
     private static final String ACTION_INCREMENT_ACHIEVEMENT_NOW = "incrementAchievementNow";
     private static final String ACTION_SHOW_ACHIEVEMENTS = "showAchievements";
@@ -144,6 +145,8 @@ public class PlayGamesServices extends CordovaPlugin implements GameHelperListen
             executeIncrementAchievementNow(options, callbackContext);
         } else if (ACTION_SHOW_PLAYER.equals(action)) {
             executeShowPlayer(callbackContext);
+        } else if (ACTION_REVEAL_ACHIEVEMENT.equals(action)) {
+            executeRevealAchievement(options, callbackContext);     
         } else {
             return false; // Tried to execute an unknown method
         }
@@ -351,6 +354,24 @@ public class PlayGamesServices extends CordovaPlugin implements GameHelperListen
                 }
             }
         });
+    }
+       
+    private void executeRevealAchievement(final JSONObject options, final CallbackContent callbackContext) {
+        Log.d(LOGTAG, "executeRevealAchievement"); 
+           
+        cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                   
+                if (gameHelper.isSignedIn()) {
+                    Games.Achievements.reveal(gameHelper.getApiClient(), options.optString("achievementId"));
+                    callbackContext.success();
+                } else {
+                    Log.w(LOGTAG, "executeRevealAchievement: not yet signed in");
+                    callbackContext.error("executeRevealAchievement: not yet signed in");
+                }
+            }
+        })
     }
 
     private void executeUnlockAchievement(final JSONObject options, final CallbackContext callbackContext) {
