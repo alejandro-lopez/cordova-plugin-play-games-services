@@ -356,7 +356,7 @@ public class PlayGamesServices extends CordovaPlugin implements GameHelperListen
         });
     }
        
-    private void executeRevealAchievement(final JSONObject options, final CallbackContent callbackContext) {
+    private void executeRevealAchievement(final JSONObject options, final CallbackContext callbackContext) {
         Log.d(LOGTAG, "executeRevealAchievement"); 
            
         cordova.getActivity().runOnUiThread(new Runnable() {
