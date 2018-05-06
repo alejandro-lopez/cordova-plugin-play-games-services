@@ -371,7 +371,7 @@ public class PlayGamesServices extends CordovaPlugin implements GameHelperListen
                     callbackContext.error("executeRevealAchievement: not yet signed in");
                 }
             }
-        })
+        });
     }
 
     private void executeUnlockAchievement(final JSONObject options, final CallbackContext callbackContext) {
