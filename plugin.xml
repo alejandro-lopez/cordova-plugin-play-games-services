@@ -38,8 +38,8 @@
             <string name="app_id">$APP_ID</string>
         </config-file>
         
-        <source-file src="src/android/ids.xml" target-dir="res/values" />
-	<config-file target="res/values/ids.xml" parent="/*">
+        <!--<source-file src="src/android/ids.xml" target-dir="res/values" />-->
+	<config-file target="res/values/ids.xml" parent="/resources">
 		<string name="app_id">$APP_ID</string>
 	</config-file>
 
