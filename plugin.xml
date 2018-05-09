@@ -37,11 +37,6 @@
         <config-file target="res/values/strings.xml" parent="/resources">
             <string name="app_id">$APP_ID</string>
         </config-file>
-        
-        <!--<source-file src="src/android/ids.xml" target-dir="res/values" />-->
-	<config-file target="res/values/ids.xml" parent="/resources">
-		<item type="id" name="app_id">$APP_ID</item>
-	</config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <meta-data
