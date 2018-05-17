@@ -517,7 +517,7 @@ public class PlayGamesServices extends CordovaPlugin implements GameHelperListen
                         playerJson.put("playerId", player.getPlayerId());
                         playerJson.put("title", player.getTitle());
                         playerJson.put("iconImageUrl", player.getIconImageUrl());
-                        playerJson.put("hiResIconImageUrl", player.getHiResImageUrl());
+                        playerJson.put("avatarImageUrl", player.getHiResImageUrl());
 
                         callbackContext.success(playerJson);
 
