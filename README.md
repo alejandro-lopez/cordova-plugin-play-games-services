@@ -75,7 +75,7 @@ window.plugins.playGamesServices.submitScore(data);
 
 Ensure you have had a successful callback from `window.plugins.playGamesServices.auth()` first before attempting to submit a score. You should also have set up your leaderboard(s) in Google Play Game Console and use the leaderboard identifier assigned there as the `leaderboardId`.
 
-This method submit the score immediately.
+This method submits the score immediately.
 
 ```js
 var data = {
@@ -83,6 +83,14 @@ var data = {
     leaderboardId: "board1"
 };
 window.plugins.playGamesServices.submitScoreNow(data);
+```
+
+#### Get player's score
+```js
+var data = {
+    leaderboardId: "board1"
+};
+window.plugins.playGamesServices.getPlayerScore(data, function(data) { /* score available as data.PlayerScore */ }, function(e) { });
 ```
 
 #### Show all leaderboards
